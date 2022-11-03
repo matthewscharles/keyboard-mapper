@@ -1,0 +1,29 @@
+{
+  "name": "keyboard-mapper",
+  "version": "1.0.0",
+  "description": "Map keyboard events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc -c jsdoc.json",
+    "build": "doc && webpack ./test_src/test.js -o ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewscharles/keyboard-mapper.git"
+  },
+  "keywords": [
+    "keyboard"
+  ],
+  "author": "Charles Matthews",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewscharles/keyboard-mapper/issues"
+  },
+  "homepage": "https://github.com/matthewscharles/keyboard-mapper#readme",
+  "devDependencies": {
+    "jsdoc": "^4.0.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
