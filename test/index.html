@@ -9,6 +9,22 @@
     <title>Keyboard Mapper test page</title>
 </head>
 <body>
-    
+    <div>
+    Press letter and number keys to display a message. Press the A and S keys to change colour of the div.
+    </div>
+    <button>start keyboard map</button>
+    <button>stop keyboard map</button>
+    <div id="test" style="width:100%;height:1em;"></div>
+    <script>
+        let noteNames = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B']
+        keyboardMapper.keymap.Key = (e, item, direction)=>{document.querySelector('#test').innerHTML=`${item} ${direction ? 'pressed' : 'released'}`}
+        keyboardMapper.keymap.Digit = (e, item, direction)=>{document.querySelector('#test').innerHTML=`note ${noteNames[item]} ${direction ? 'pressed' : 'released'}`}
+        Object.assign(keyboardMapper.keyranges,{
+        Key:{
+            A: (e, item, direction)=>{document.querySelector('#test').style.backgroundColor=direction ? 'red' : 'white'},
+            S: (e, item, direction)=>{document.querySelector('#test').style.backgroundColor=direction ? 'green' : 'white'}
+        }
+    })
+    </script>
 </body>
 </html>
