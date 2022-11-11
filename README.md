@@ -1,5 +1,5 @@
 # keyboard-mapper
- Map keyboard events
+ Map keyboard events. Work in progress and not really ready for others to use!
 
 # usage
 ```
@@ -14,7 +14,7 @@ keyboardMapper.default = function(e, item, direction){
 }
 ```
 
-Right now this is probably more complicated to implement than it should be, but I hope it'll be easier to manage overall..
+Right now this is probably more complicated to implement than it should be, but I hope it'll be easier to manage overall than setting up event listeners ad hoc..
 
 Initialise all keys with default method (not very useful):
 ```
@@ -45,4 +45,11 @@ Object.assign(keyboardMapper.keyranges,{
     }
 })
 
+```
+
+Set individual key where category/range does not apply:
+```
+keyboardMapper.keymap['Tab']=function(e, down){
+    console.log(down?'tab down':'tab up')
+}
 ```
