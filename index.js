@@ -13,6 +13,7 @@ const KeyboardMapper = function(keymap, keyranges, exclusive = true){
     this.keymap_init();
     this.keymap_assign(keymap);
     this.keymap_assign(keyranges);
+
     // on by default; use this.unlisten to stop.
     this.listen();
 }
@@ -40,9 +41,9 @@ KeyboardMapper.prototype.numberOfActiveKeys = function(){
 
 /**
  * Default method
- * @param {*} e 
- * @param {*} item 
- * @param {*} direction 
+ * @param {Object} e keyboard event from listener
+ * @param {string} item (if exists item within range)
+ * @param {boolean} direction 
  */
 
 KeyboardMapper.prototype.default = function(e,item, direction){
@@ -87,7 +88,8 @@ KeyboardMapper.prototype.keyranges_assign = function(keyranges){
 KeyboardMapper.prototype.listen = function(target = document){
     target.addEventListener('keydown',this,false);
     target.addEventListener('keyup',this,false);
-    console.log('keyboard map on')
+    console.log('keyboard map on, listening...')
+
     // old way:
     // target.addEventListener('keydown',this._keyboardMethod = (e)=>this.process(e), false);
 }
@@ -101,6 +103,7 @@ KeyboardMapper.prototype.unlisten = function(target = document){
     target.removeEventListener('keydown',this)
     target.removeEventListener('keyup',this)
     console.log('keyboard map off')
+
     // old way:
     // target.removeEventListener('keydown', this._keyboardMethod);
 }
@@ -193,7 +196,6 @@ KeyboardMapper.prototype.process = function(e){
         this.keymap[category](e, down);
     } else {
         if(typeof this.keyranges[category][item] == 'function') {
-            console.log('item inside if:',item)
             this.keyranges[category][item](e,item,down);
             if(!this.exclusiveMapping){
                 this.keymap[category](e,item, down);
