@@ -14,6 +14,7 @@ const KeyboardMapper = function(keymap, keyranges, exclusive = true){
     this.keymap_assign(keymap);
     this.keymap_assign(keyranges);
 
+    this.listeners = ['keydown','keyup']
     // on by default; use this.unlisten to stop.
     this.listen();
 }
@@ -86,8 +87,9 @@ KeyboardMapper.prototype.keyranges_assign = function(keyranges){
  */
 
 KeyboardMapper.prototype.listen = function(target = document){
-    target.addEventListener('keydown',this,false);
-    target.addEventListener('keyup',this,false);
+    for (let item of this.listeners){
+        target.addEventListener(item,this,false)
+    }
     console.log('keyboard map on, listening...')
 
     // old way:
@@ -100,8 +102,9 @@ KeyboardMapper.prototype.listen = function(target = document){
  */
 
 KeyboardMapper.prototype.unlisten = function(target = document){
-    target.removeEventListener('keydown',this)
-    target.removeEventListener('keyup',this)
+    for (let item of this.listeners){
+        target.removeEventListener(item,this,false)
+    }
     console.log('keyboard map off')
 
     // old way:
