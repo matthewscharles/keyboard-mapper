@@ -30,11 +30,7 @@ KeyboardMapper.prototype.constructor = KeyboardMapper;
  * @param {boolean} direction true: down, false: up
  */
 
-/**
- * key: keyCode, value: milliseconds from first key pressed
- */
 
-KeyboardMapper.prototype.activeKeys = {};
 
 KeyboardMapper.prototype.numberOfActiveKeys = function(){
     return Object.keys(this.activeKeys).length;
@@ -62,39 +58,6 @@ KeyboardMapper.prototype.keymap_init = function(){
     },this)
 }
 
-/**
- * Assign the keymap -- must be in the correct format
- * @param {Object} keymap 
- */
-
-KeyboardMapper.prototype.keymap_assign = function(keymap){
-    Object.assign(this.keymap, keymap);
-}
-
-/**
- * Assign specific keyranges -- must be in the correct format
- * @param {Object} keyranges 
- * todo: merge the ranges with the keymap, or at least link?
- */
-
-KeyboardMapper.prototype.keyranges_assign = function(keyranges){
-    Object.assign(this.keyranges, keyranges);
-}
-
-/**
- * Add the event listener
- * @param {Object} target 
- */
-
-KeyboardMapper.prototype.listen = function(target = document){
-    for (let item of this.listeners){
-        target.addEventListener(item,this,false)
-    }
-    console.log('keyboard map on, listening...')
-
-    // old way:
-    // target.addEventListener('keydown',this._keyboardMethod = (e)=>this.process(e), false);
-}
 
 /**
  * Remove the event listener
@@ -110,14 +73,7 @@ KeyboardMapper.prototype.unlisten = function(target = document){
     // old way:
     // target.removeEventListener('keydown', this._keyboardMethod);
 }
-/**
- * This method allows us to map 'this' to the event listener
- * @param {Object} e 
- */
 
-KeyboardMapper.prototype.handleEvent= function(e){
-    this.process(e);
-}
 
 
 /**
