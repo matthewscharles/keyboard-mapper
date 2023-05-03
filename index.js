@@ -208,9 +208,7 @@ KeyboardMapper.prototype.process = function(e){
         }
     }
   
-    
-    
-    
 }
 
 module.exports = KeyboardMapper;
+
