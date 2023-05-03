@@ -3,7 +3,7 @@
  * @param {Object} target 
  */
 
-KeyboardMapper.prototype.listen = function(target = document){
+const listen = function(target = document){
     for (let item of this.listeners){
         target.addEventListener(item,this,false)
     }
@@ -12,3 +12,4 @@ KeyboardMapper.prototype.listen = function(target = document){
     // old way:
     // target.addEventListener('keydown',this._keyboardMethod = (e)=>this.process(e), false);
 }
+export default listen;

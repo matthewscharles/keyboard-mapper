@@ -3,6 +3,8 @@
  * @param {Object} keymap 
  */
 
-KeyboardMapper.prototype.keymap_assign = function(keymap){
+const keymap_assign = function(keymap){
     Object.assign(this.keymap, keymap);
 }
+
+export default keymap_assign;

@@ -6,7 +6,7 @@
  * Common keystrokes to map
  */
 
-KeyboardMapper.prototype.keymap = {
+const keymap = {
     // ranges / prefixes
     Key:            {},
     Arrow:          {},
@@ -38,3 +38,5 @@ KeyboardMapper.prototype.keymap = {
     BracketLeft:    {},
     BracketRight:   {},
 }
+
+export default keymap

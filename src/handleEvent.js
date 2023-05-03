@@ -3,6 +3,8 @@
  * @param {Object} e 
  */
 
-KeyboardMapper.prototype.handleEvent= function(e){
+const handleEvent= function(e){
     this.process(e);
 }
+
+export default handleEvent;

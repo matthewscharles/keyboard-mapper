@@ -4,6 +4,8 @@
  * todo: merge the ranges with the keymap, or at least link?
  */
 
-KeyboardMapper.prototype.keyranges_assign = function(keyranges){
+const keyranges_assign = function(keyranges){
     Object.assign(this.keyranges, keyranges);
 }
+
+export default keyranges_assign

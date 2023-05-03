@@ -2,4 +2,6 @@
  * key: keyCode, value: milliseconds from first key pressed
  */
 
-KeyboardMapper.prototype.activeKeys = {};
+const activeKeys = {};
+
+export default activeKeys
