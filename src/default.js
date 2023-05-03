@@ -5,6 +5,8 @@
  * @param {boolean} direction 
  */
 
-KeyboardMapper.prototype.default = function(e,item, direction){
+const defaultFunction = function(e,item, direction){
     // if(!e.repeat) console.log(item, direction ? 'down' : 'up')
 }
+
+export default defaultFunction;
