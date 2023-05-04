@@ -3,7 +3,7 @@
  * @param {Object} e Keystroke object from event listener
  */
 
-KeyboardMapper.prototype.process = function(e){
+const process = function(e){
     // code = '', repeat = false, metaKey = false, shiftKey = false
     let category = Object.keys(this.keymap).find((item)=>e.code.includes(item))
     let item = e.code.replace(category,'')
@@ -30,3 +30,5 @@ KeyboardMapper.prototype.process = function(e){
     }
   
 }
+
+export default process;

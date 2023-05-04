@@ -3,7 +3,7 @@
  * @param {Object} target 
  */
 
-KeyboardMapper.prototype.unlisten = function(target = document){
+const unlisten = function(target = document){
     for (let item of this.listeners){
         target.removeEventListener(item,this,false)
     }
@@ -12,3 +12,5 @@ KeyboardMapper.prototype.unlisten = function(target = document){
     // old way:
     // target.removeEventListener('keydown', this._keyboardMethod);
 }
+
+export default unlisten;
