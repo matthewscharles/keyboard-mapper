@@ -8,6 +8,7 @@ const process = function(e){
     let category = Object.keys(this.keymap).find((item)=>e.code.includes(item))
     let item = e.code.replace(category,'')
     let down = e.type == 'keydown';
+    if(!e.repeat)this[down ? 'keyDown' : 'keyUp'][item](e,item, down);
     if(down && !e.repeat){
         if(Object.keys(this.activeKeys).length==0){this.activeKeysTime = Date.now()}
         this.activeKeys[e.code] = Date.now() - this.activeKeysTime;
@@ -27,7 +28,7 @@ const process = function(e){
         } else {
             this.keymap[category](e,item, down);
             // insert keyup/down here?
-            if(!this.repeat)this[down ? 'keyDown' : 'keyUp'][category](e,item, down);
+            
         }
     }
   

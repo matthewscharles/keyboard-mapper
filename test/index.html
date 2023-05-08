@@ -25,6 +25,9 @@
             document.querySelector('#test').innerHTML=`${item} ${direction ? 'pressed' : 'released'}`
             document.querySelector('#active_number').innerHTML = keyboardMapper.numberOfActiveKeys();
         }
+
+        keyboardMapper.keyUp.P = ()=>{console.log('P ***')}
+        keyboardMapper.keyDown.P = ()=>{console.log('P ---')}
         
         keyboardMapper.keymap.Digit = (e, item, direction)=>{
             document.querySelector('#test').innerHTML=`note ${noteNames[item]} ${direction ? 'pressed' : 'released'}`
