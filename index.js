@@ -1,10 +1,6 @@
-// activeKeys.js           keymap_assign.js        listen.js               unlisten.js
-// defaultFunction.js      keymap_init.js          numberOfActiveKeys.js
-// handleEvent.js          keyranges.js            process.js
-// keymap.js               keyranges_assign.js     ranges.js
-
 import activeKeys from './src/activeKeys.js'
 import defaultFunction from './src/defaultFunction.js'
+import exclusive from './src/exclusive.js'
 import handleEvent from './src/handleEvent.js'
 import keymap from './src/keymap.js'
 import keymap_assign from './src/keymap_assign.js'
@@ -44,6 +40,7 @@ KeyboardMapper.prototype.constructor = KeyboardMapper;
 
 KeyboardMapper.prototype.activeKeys = activeKeys;
 KeyboardMapper.prototype.defaultFunction = defaultFunction;
+KeyboardMapper.prototype.exclusive = exclusive;
 KeyboardMapper.prototype.handleEvent = handleEvent;
 KeyboardMapper.prototype.keymap = keymap;
 KeyboardMapper.prototype.keymap_assign = keymap_assign;
