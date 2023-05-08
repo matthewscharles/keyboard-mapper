@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/unlisten.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,33 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/unlisten.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Remove the event listener
+ * @param {Object} target 
+ */
 
+const unlisten = function(target = document){
+    for (let item of this.listeners){
+        target.removeEventListener(item,this,false)
+    }
+    console.log('keyboard map off')
 
-    <h3> </h3>
+    // old way:
+    // target.removeEventListener('keydown', this._keyboardMethod);
+}
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default unlisten;</code></pre>
+        </article>
+    </section>
 
 
 

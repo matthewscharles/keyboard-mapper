@@ -56,4 +56,4 @@ KeyboardMapper.prototype.process = process;
 KeyboardMapper.prototype.ranges = ranges;
 KeyboardMapper.prototype.unlisten = unlisten;
 
-module.exports = KeyboardMapper;
+export default KeyboardMapper;

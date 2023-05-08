@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/process.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,51 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/process.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Process the input
+ * @param {Object} e Keystroke object from event listener
+ */
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
+const process = function(e){
+    // code = '', repeat = false, metaKey = false, shiftKey = false
+    let category = Object.keys(this.keymap).find((item)=>e.code.includes(item))
+    let item = e.code.replace(category,'')
+    let down = e.type == 'keydown';
+    if(down &amp;&amp; !e.repeat){
+        if(Object.keys(this.activeKeys).length==0){this.activeKeysTime = Date.now()}
+        this.activeKeys[e.code] = Date.now() - this.activeKeysTime;
+        
+    } else if (!down) {
+        delete this.activeKeys[e.code];
+    }
     
+    if(item==''){
+        this.keymap[category](e, down);
+    } else {
+        if(typeof this.keyranges[category][item] == 'function') {
+            this.keyranges[category][item](e,item,down);
+            if(!this.exclusiveMapping){
+                this.keymap[category](e,item, down);
+            }
+        } else {
+            this.keymap[category](e,item, down);
+        }
+    }
+  
+}
 
-
-
-
-
+export default process;</code></pre>
+        </article>
+    </section>
 
 
 
