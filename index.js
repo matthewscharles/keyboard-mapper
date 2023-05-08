@@ -56,25 +56,4 @@ KeyboardMapper.prototype.process = process;
 KeyboardMapper.prototype.ranges = ranges;
 KeyboardMapper.prototype.unlisten = unlisten;
 
-
-/**
- * what was this attached to?
- * @param {Object} e 
- * @param {String} item 
- * @param {boolean} direction true: down, false: up
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = KeyboardMapper;
-
