@@ -26,6 +26,8 @@ const process = function(e){
             }
         } else {
             this.keymap[category](e,item, down);
+            // insert keyup/down here?
+            if(!this.repeat)this[down ? 'keyDown' : 'keyUp'][category](e,item, down);
         }
     }
   
