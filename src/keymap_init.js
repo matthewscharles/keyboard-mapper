@@ -4,7 +4,7 @@ const keymap_init = function(){
     this.keyDown = {}
     Object.values(this.ranges).forEach(range=>{
         Object.entries(range).forEach(([key,value])=>{
-            console.log(key,value)
+            
             this.keyUp[value] = ()=>{}
             this.keyDown[value] = ()=>{}
         })
