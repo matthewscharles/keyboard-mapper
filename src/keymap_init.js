@@ -1,7 +1,12 @@
 const keymap_init = function(){
+    this.keymap ={}
+    this.keyUp = {};
+    this.keyDown = {}
     Object.keys(this.keymap).forEach(key=>{this.keymap[key] = this.default},this)
+    
     Object.keys(this.ranges).forEach(key=>{
         this.keyranges[key]={};
+        
         this.keyUp[key] = ()=>{};
         this.keyDown[key] = ()=>{};    
         this.ranges[key].forEach(x=>{
