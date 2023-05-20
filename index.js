@@ -32,7 +32,6 @@ const KeyboardMapper = function(keymap, keyranges, exclusive = true){
     this.keymap_assign(keyranges);
     
     this.listeners = ['keydown','keyup']
-    // on by default; use this.unlisten to stop.
     this.listen();
 }
 

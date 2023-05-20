@@ -28,7 +28,6 @@ const process = function(e){
         } else {
             this.keymap[category](e,item, down);
             // insert keyup/down here?
-            
         }
     }
   

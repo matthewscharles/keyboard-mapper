@@ -10,7 +10,6 @@ const keymap_init = function(){
         })
     })
     
-    
     Object.keys(this.keymap).forEach(key=>{this.keymap[key] = this.default},this)
     
     Object.keys(this.ranges).forEach(key=>{

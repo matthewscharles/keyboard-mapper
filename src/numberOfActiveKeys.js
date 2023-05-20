@@ -1,3 +1,9 @@
+/**
+ * Returns the number of active keys
+ * @param {Object} activeKeys
+ * @returns {number} - Number of active keys
+ */
+
 
 
 const numberOfActiveKeys = function(){

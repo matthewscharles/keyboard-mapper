@@ -5,6 +5,7 @@
 
 const keymap_assign = function(keymap){
     Object.assign(this.keymap, keymap);
+    return this;
 }
 
 export default keymap_assign;

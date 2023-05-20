@@ -9,6 +9,8 @@ const unlisten = function(target = document){
     }
     console.log('keyboard map off')
 
+    return this;
+    
     // old way:
     // target.removeEventListener('keydown', this._keyboardMethod);
 }

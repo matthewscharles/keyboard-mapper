@@ -9,6 +9,7 @@ const listen = function(target = document){
     }
     console.log('keyboard map on, listening...')
 
+    return this;
     // old way:
     // target.addEventListener('keydown',this._keyboardMethod = (e)=>this.process(e), false);
 }

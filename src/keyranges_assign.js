@@ -6,6 +6,7 @@
 
 const keyranges_assign = function(keyranges){
     Object.assign(this.keyranges, keyranges);
+    return this;
 }
 
 export default keyranges_assign

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: src/keymap.js</title>
+    <title>JSDoc: Source: src/numberOfActiveKeys.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: src/keymap.js</h1>
+    <h1 class="page-title">Source: src/numberOfActiveKeys.js</h1>
 
     
 
@@ -26,48 +26,19 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-
-
-
-/**
- * Common keystrokes to map
+            <pre class="prettyprint source linenums"><code>/**
+ * Returns the number of active keys
+ * @param {Object} activeKeys
+ * @returns {number} - Number of active keys
  */
 
-const keymap = {
-    // ranges / prefixes
-    Key:            {},
-    Arrow:          {},
-    Digit:          {},
-    F:              {},
 
-    Meta:           {},
-    Alt:            {},
-    Shift:          {},
-    Control:        {},
-    // end ranges / prefixes
 
-    Backspace:      {},
-    Delete:         {},
-    Tab:            {},
-    Space:          {},
-    
-    Minus:          {},
-    Equal:          {},
-    Semicolon:      {},
-    Quote:          {},
-    Comma:          {},
-    Period:         {},
-    
-    Slash:          {},
-    Backslash:      {},
-    Backquote:      {},
-    
-    BracketLeft:    {},
-    BracketRight:   {},
+const numberOfActiveKeys = function(){
+    return Object.keys(this.activeKeys).length;
 }
 
-export default keymap</code></pre>
+export default numberOfActiveKeys;</code></pre>
         </article>
     </section>
 

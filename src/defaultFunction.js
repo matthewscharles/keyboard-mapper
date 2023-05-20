@@ -5,7 +5,6 @@
  * @param {boolean} direction 
  */
 
-
 const defaultFunction = function(e,item, direction){
     // if(!e.repeat) console.log(item, direction ? 'down' : 'up')
 }
