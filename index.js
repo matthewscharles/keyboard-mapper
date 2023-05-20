@@ -22,19 +22,21 @@ import unlisten from './src/unlisten.js'
  */
 
 const KeyboardMapper = function(keymap, keyranges, exclusive = true){
-    this.defaultFunction = 'test';
+    this.defaultFunction = ()=>{};
+    
     this.activeKeysTime = Date.now();
     this.exclusiveMapping = exclusive;
+    
     this.keymap_init();
     this.keymap_assign(keymap);
     this.keymap_assign(keyranges);
-
+    
     this.listeners = ['keydown','keyup']
     // on by default; use this.unlisten to stop.
     this.listen();
 }
 
-KeyboardMapper.prototype = {}
+KeyboardMapper.prototype = {};
 
 KeyboardMapper.prototype.constructor = KeyboardMapper;
 
