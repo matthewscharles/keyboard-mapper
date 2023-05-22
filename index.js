@@ -16,12 +16,12 @@ import unlisten from './src/unlisten.js'
 /**
  * Keyboard Mapper
  * @class
- * @param {Object} keymap       - Dictionary of key types and associated functions to assign
- * @param {Object} keymap       - Dictionary of specific keys and associated functions to assign
  * @param {boolean} exclusive   - Does overriding within a range also trigger the default?
+ * @param {Object} keymap       - Dictionary of key types and associated functions to assign
+ * @param {Object} keyranges       - Dictionary of specific keys and associated functions to assign
  */
 
-const KeyboardMapper = function(keymap, keyranges, exclusive = true){
+const KeyboardMapper = function(exclusive = true, keymap= {}, keyranges={}){
     this.defaultFunction = ()=>{};
     
     this.activeKeysTime = Date.now();
