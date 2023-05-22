@@ -39,19 +39,21 @@ KeyboardMapper.prototype = {};
 
 KeyboardMapper.prototype.constructor = KeyboardMapper;
 
-KeyboardMapper.prototype.activeKeys = activeKeys;
-KeyboardMapper.prototype.defaultFunction = defaultFunction;
-KeyboardMapper.prototype.exclusive = exclusive;
-KeyboardMapper.prototype.handleEvent = handleEvent;
-KeyboardMapper.prototype.keymap = keymap;
-KeyboardMapper.prototype.keymap_assign = keymap_assign;
-KeyboardMapper.prototype.keymap_init = keymap_init;
-KeyboardMapper.prototype.keyranges = keyranges;
-KeyboardMapper.prototype.keyranges_assign = keyranges_assign;
-KeyboardMapper.prototype.listen = listen;
-KeyboardMapper.prototype.numberOfActiveKeys = numberOfActiveKeys;
-KeyboardMapper.prototype.process = process;
-KeyboardMapper.prototype.ranges = ranges;
-KeyboardMapper.prototype.unlisten = unlisten;
+Object.assign(KeyboardMapper.prototype, {
+    activeKeys,
+    defaultFunction,
+    exclusive,
+    handleEvent,
+    keymap,
+    keymap_assign,
+    keymap_init,
+    keyranges,
+    keyranges_assign,
+    listen,
+    numberOfActiveKeys,
+    process,
+    ranges,
+    unlisten
+})
 
 export default KeyboardMapper;
