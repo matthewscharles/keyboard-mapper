@@ -2,12 +2,22 @@
   "name": "keyboard-mapper",
   "version": "1.1.3",
   "description": "Map keyboard events",
-  "main": "index.js",
   "type": "module",
+  "main": "./dist/keyboard-mapper.umd.js",
+  "module": "./dist/keyboard-mapper.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/keyboard-mapper.es.js",
+      "require": "./dist/keyboard-mapper.umd.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "doc": "jsdoc -c jsdoc.json",
-    "build": "npm run doc && webpack ./test_src/test.js -o ./test"
+    "build": "npm run doc && webpack ./test_src/test.js -o ./test",
+    "build_vite": "vite build",
+    "preview": "vite preview",
+    "dev": "vite"
   },
   "repository": {
     "type": "git",

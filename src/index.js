@@ -1,17 +1,17 @@
-import activeKeys from './src/activeKeys.js'
-import defaultFunction from './src/defaultFunction.js'
-import exclusive from './src/exclusive.js'
-import handleEvent from './src/handleEvent.js'
-import keymap from './src/keymap.js'
-import keymap_assign from './src/keymap_assign.js'
-import keymap_init from './src/keymap_init.js'
-import keyranges from './src/keyranges.js'
-import keyranges_assign from './src/keyranges_assign.js'
-import listen from './src/listen.js'
-import numberOfActiveKeys from './src/numberOfActiveKeys.js'
-import process from './src/process.js'
-import ranges from './src/ranges.js'
-import unlisten from './src/unlisten.js'
+import activeKeys from './activeKeys.js'
+import defaultFunction from './defaultFunction.js'
+import exclusive from './exclusive.js'
+import handleEvent from './handleEvent.js'
+import keymap from './keymap.js'
+import keymap_assign from './keymap_assign.js'
+import keymap_init from './keymap_init.js'
+import keyranges from './keyranges.js'
+import keyranges_assign from './keyranges_assign.js'
+import listen from './listen.js'
+import numberOfActiveKeys from './numberOfActiveKeys.js'
+import process from './process.js'
+import ranges from './ranges.js'
+import unlisten from './unlisten.js'
 
 /**
  * Keyboard Mapper
@@ -56,4 +56,4 @@ Object.assign(KeyboardMapper.prototype, {
     unlisten
 })
 
-export default KeyboardMapper;
+export { KeyboardMapper };
