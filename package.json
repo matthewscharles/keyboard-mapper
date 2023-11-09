@@ -1,6 +1,6 @@
 {
   "name": "keyboard-mapper",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Map keyboard events",
   "type": "module",
   "main": "./dist/keyboard-mapper.umd.js",
