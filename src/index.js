@@ -21,7 +21,7 @@ import unlisten from './unlisten.js'
  * @param {Object} keyranges       - Dictionary of specific keys and associated functions to assign
  */
 
-const KeyboardMapper = function(exclusive = true, keymap= {}, keyranges={}){
+const KeyboardMapper = function(exclusive = true, keymap={}, keyranges={}){
     this.defaultFunction = ()=>{};
     
     this.activeKeysTime = Date.now();

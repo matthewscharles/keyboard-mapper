@@ -6,11 +6,26 @@
 const process = function(e){
     // code = '', repeat = false, metaKey = false, shiftKey = false
     let category = Object.keys(this.keymap).find((item)=>e.code.includes(item))
+    if(!category){
+        if(window.verbose) console.log('no category')
+        return;
+    }
     let item = e.code.replace(category,'')
     let down = e.type == 'keydown';
-    if(!e.repeat)this[down ? 'keyDown' : 'keyUp'][item](e,item, down);
+    
+    if(!e.repeat) {
+        
+        if(typeof this[down ? 'keyDown' : 'keyUp'][item] === 'function'){
+            
+            this[down ? 'keyDown' : 'keyUp'][item](e,item, down);
+        }
+        
+    }
     if(down && !e.repeat){
-        if(Object.keys(this.activeKeys).length==0){this.activeKeysTime = Date.now()}
+        if(Object.keys(this.activeKeys).length==0){
+            this.activeKeysTime = Date.now()
+        }
+        
         this.activeKeys[e.code] = Date.now() - this.activeKeysTime;
         
     } else if (!down) {
@@ -30,7 +45,7 @@ const process = function(e){
             // insert keyup/down here?
         }
     }
-  
+    
 }
 
 export default process;
