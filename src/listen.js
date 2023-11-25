@@ -3,6 +3,9 @@
  * @param {Object} target 
  */
 
+// old way:
+// target.addEventListener('keydown',this._keyboardMethod = (e)=>this.process(e), false);
+
 const listen = function(target = document){
     for (let item of this.listeners){
         target.addEventListener(item,this,false)
@@ -10,7 +13,5 @@ const listen = function(target = document){
     console.log('keyboard map on, listening...')
 
     return this;
-    // old way:
-    // target.addEventListener('keydown',this._keyboardMethod = (e)=>this.process(e), false);
 }
 export default listen;

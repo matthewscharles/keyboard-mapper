@@ -4,8 +4,6 @@
  * @returns {number} - Number of active keys
  */
 
-
-
 const numberOfActiveKeys = function(){
     return Object.keys(this.activeKeys).length;
 }

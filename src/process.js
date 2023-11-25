@@ -5,11 +5,19 @@
 
 const process = function(e){
     // code = '', repeat = false, metaKey = false, shiftKey = false
-    let category = Object.keys(this.keymap).find((item)=>e.code.includes(item))
+    
+    let category = Object.keys(this.keymap).find((item)=>e.code.includes(item));
+    
     if(!category){
         if(window.verbose) console.log('no category')
         return;
     }
+    
+    if(e.metaKey || e.shiftKey || e.ctrlKey || e.altKey){
+        if(window.verbose) console.log('modifier key pressed')
+        return;
+    }
+    
     let item = e.code.replace(category,'')
     let down = e.type == 'keydown';
     
@@ -21,6 +29,7 @@ const process = function(e){
         }
         
     }
+    
     if(down && !e.repeat){
         if(Object.keys(this.activeKeys).length==0){
             this.activeKeysTime = Date.now()
