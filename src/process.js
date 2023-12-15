@@ -13,7 +13,13 @@ const process = function(e){
         return;
     }
     
-    if(e.metaKey || e.shiftKey || e.ctrlKey || e.altKey){
+    if(e.shiftKey){
+        // allow shift, for now
+        if(window.verbose) console.log('shift key pressed')
+        // return;
+    }
+    
+    if(e.metaKey || e.ctrlKey || e.altKey){
         if(window.verbose) console.log('modifier key pressed')
         return;
     }
